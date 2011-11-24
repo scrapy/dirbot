@@ -32,7 +32,7 @@ want to try it by limiting the crawl to a certain number of items.
 
 For example, to run the ``googledir`` spider limited to scrape 20 items use::
 
-    scrapy crawl googledir --set CLOSESPIDER_ITEMPASSED=20
+    scrapy crawl googledir --set CLOSESPIDER_ITEMCOUNT=20
 
 Spider: dmoz
 ------------
