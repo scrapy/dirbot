@@ -19,20 +19,9 @@ See the source code for more details.
 Spiders
 =======
 
-This project contains two spiders: ``googledir`` and ``dmoz``. When in doubt,
-you can check the available spiders with::
+This project contains one spider called ``dmoz`` that you can see by running::
 
     scrapy list
-
-Spider: googledir
------------------
-
-The ``googledir`` spider crawls the entire Google Directory, though you may
-want to try it by limiting the crawl to a certain number of items.
-
-For example, to run the ``googledir`` spider limited to scrape 20 items use::
-
-    scrapy crawl googledir --set CLOSESPIDER_ITEMCOUNT=20
 
 Spider: dmoz
 ------------
@@ -40,9 +29,8 @@ Spider: dmoz
 The ``dmoz`` spider scrapes the Open Directory Project (dmoz.org), and it's
 based on the dmoz spider described in the `Scrapy tutorial`_
 
-Unlike the ``googledir`` spider, this spider doesn't crawl the entire dmoz.org
-site but only a few pages by default (defined in the ``start_pages``
-attribute). These pages are:
+This spider doesn't crawl the entire dmoz.org site but only a few pages by
+default (defined in the ``start_pages`` attribute). These pages are:
 
 * http://www.dmoz.org/Computers/Programming/Languages/Python/Books/
 * http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/
@@ -57,8 +45,6 @@ For example, to scrape a different URL use::
     scrapy crawl http://www.dmoz.org/Computers/Programming/Languages/Erlang/
 
 You can scrape any URL from dmoz.org using this spider
-
-* ``googledir`` - for scraping Google Directory (directory.google.com)
 
 .. _Scrapy tutorial: http://doc.scrapy.org/intro/tutorial.html 
 
