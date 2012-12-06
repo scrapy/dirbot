@@ -1,14 +1,10 @@
 from scrapy.item import Item, Field
 
 
-class DirbotItem(Item):
+class Website(Item):
 
     name = Field()
     description = Field()
-
-
-class Website(DirbotItem):
-
     url = Field()
 
     def __str__(self):
