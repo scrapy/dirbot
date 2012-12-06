@@ -13,6 +13,13 @@ class DmozSpider(BaseSpider):
     ]
 
     def parse(self, response):
+        """
+        The lines below is a spider contract. For more info see:
+        http://doc.scrapy.org/en/latest/topics/contracts.html
+
+        @url http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/
+        @scrapes name
+        """
         hxs = HtmlXPathSelector(response)
         sites = hxs.select('//ul/li')
         items = []
