@@ -21,7 +21,7 @@ class DmozSpider(BaseSpider):
         @scrapes name
         """
         hxs = HtmlXPathSelector(response)
-        sites = hxs.select('//ul/li')
+        sites = hxs.select('//ul[@class="directory-url"]/li')
         items = []
 
         for site in sites:
