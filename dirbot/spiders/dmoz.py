@@ -28,7 +28,7 @@ class DmozSpider(BaseSpider):
             item = Website()
             item['name'] = site.select('a/text()').extract()
             item['url'] = site.select('a/@href').extract()
-            item['description'] = site.select('text()').extract()
+            item['description'] = site.select('text()').re('-\s([^\n]*?)\\n')
             items.append(item)
 
         return items
