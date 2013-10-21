@@ -36,15 +36,7 @@ default (defined in the ``start_pages`` attribute). These pages are:
 * http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/
 
 So, if you run the spider regularly (with ``scrapy crawl dmoz``) it will scrape
-only those two pages. However, you can scrape any dmoz.org page by passing the
-url instead of the spider name. Scrapy internally resolves the spider to use by
-looking at the allowed domains of each spider.
-
-For example, to scrape a different URL use::
-
-    scrapy crawl http://www.dmoz.org/Computers/Programming/Languages/Erlang/
-
-You can scrape any URL from dmoz.org using this spider
+only those two pages.
 
 .. _Scrapy tutorial: http://doc.scrapy.org/intro/tutorial.html 
 
