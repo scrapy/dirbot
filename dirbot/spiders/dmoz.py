@@ -1,10 +1,10 @@
-from scrapy.spider import BaseSpider
+from scrapy.spider import Spider
 from scrapy.selector import HtmlXPathSelector
 
 from dirbot.items import Website
 
 
-class DmozSpider(BaseSpider):
+class DmozSpider(Spider):
     name = "dmoz"
     allowed_domains = ["dmoz.org"]
     start_urls = [
