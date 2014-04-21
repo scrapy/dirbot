@@ -1,5 +1,5 @@
 from scrapy.spider import Spider
-from scrapy.selector import HtmlXPathSelector
+from scrapy.selector import Selector
 
 from dirbot.items import Website
 
@@ -20,15 +20,15 @@ class DmozSpider(Spider):
         @url http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/
         @scrapes name
         """
-        hxs = HtmlXPathSelector(response)
-        sites = hxs.select('//ul[@class="directory-url"]/li')
+        sel = Selector(response)
+        sites = sel.xpath('//ul[@class="directory-url"]/li')
         items = []
 
         for site in sites:
             item = Website()
-            item['name'] = site.select('a/text()').extract()
-            item['url'] = site.select('a/@href').extract()
-            item['description'] = site.select('text()').re('-\s([^\n]*?)\\n')
+            item['name'] = site.xpath('a/text()').extract()
+            item['url'] = site.xpath('a/@href').extract()
+            item['description'] = site.xpath('text()').re('-\s([^\n]*?)\\n')
             items.append(item)
 
         return items
