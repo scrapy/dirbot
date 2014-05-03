@@ -38,7 +38,7 @@ default (defined in the ``start_pages`` attribute). These pages are:
 So, if you run the spider regularly (with ``scrapy crawl dmoz``) it will scrape
 only those two pages.
 
-.. _Scrapy tutorial: http://doc.scrapy.org/intro/tutorial.html 
+.. _Scrapy tutorial: http://doc.scrapy.org/en/latest/intro/tutorial.html
 
 Pipelines
 =========
