@@ -28,7 +28,7 @@ class DmozSpider(Spider):
             item = Website()
             item['name'] = site.xpath('a/text()').extract()
             item['url'] = site.xpath('a/@href').extract()
-            item['description'] = site.xpath('text()').re('-\s([^\n]*?)\\n')
+            item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
             items.append(item)
 
         return items
