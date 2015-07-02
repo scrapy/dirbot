@@ -30,7 +30,7 @@ The ``dmoz`` spider scrapes the Open Directory Project (dmoz.org), and it's
 based on the dmoz spider described in the `Scrapy tutorial`_
 
 This spider doesn't crawl the entire dmoz.org site but only a few pages by
-default (defined in the ``start_pages`` attribute). These pages are:
+default (defined in the ``start_urls`` attribute). These pages are:
 
 * http://www.dmoz.org/Computers/Programming/Languages/Python/Books/
 * http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/
