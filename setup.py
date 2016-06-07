@@ -5,4 +5,8 @@ setup(
     version='1.0',
     packages=find_packages(),
     entry_points={'scrapy': ['settings = dirbot.settings']},
+    install_requires=[
+        'scrapy',
+        'six'
+    ]
 )
