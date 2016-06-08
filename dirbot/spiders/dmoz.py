@@ -30,7 +30,7 @@ class DmozSpider(Spider):
             item['url'] = site.xpath(
                 'a/@href').extract_first().strip()
             item['description'] = site.css(
-                'div.site-descr').xpath('text()[1]').extract_first().strip()
+                'div.site-descr::text').extract_first().strip()
             items.append(item)
 
         return items
