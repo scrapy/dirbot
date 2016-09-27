@@ -20,15 +20,17 @@ class DmozSpider(Spider):
         @url http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/
         @scrapes name
         """
-        sel = Selector(response)
-        sites = sel.xpath('//ul[@class="directory-url"]/li')
+        sites = response.css('#site-list-content > div.site-item > div.title-and-desc')
         items = []
 
         for site in sites:
             item = Website()
-            item['name'] = site.xpath('a/text()').extract()
-            item['url'] = site.xpath('a/@href').extract()
-            item['description'] = site.xpath('text()').re('-\s[^\n]*\\r')
+            item['name'] = site.css(
+                'a > div.site-title::text').extract_first().strip()
+            item['url'] = site.xpath(
+                'a/@href').extract_first().strip()
+            item['description'] = site.css(
+                'div.site-descr::text').extract_first().strip()
             items.append(item)
 
         return items
